@@ -4,5 +4,5 @@ COPY package.json ./
 RUN npm install
 COPY . .
 RUN npm run build
-EXPOSE 7000
-CMD ["npx", "vite", "preview", "--port", "7000", "--host", "0.0.0.0"]
+EXPOSE 7100
+CMD ["npx", "vite", "preview", "--port", "7100", "--host", "0.0.0.0"]

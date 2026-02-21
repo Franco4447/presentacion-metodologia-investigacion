@@ -10,6 +10,11 @@ export default defineConfig(({ mode }) => {
       host: '0.0.0.0',
       allowedHosts: ['tmntech.ddns.net'],
     },
+    preview: {
+      port: 7100,
+      host: '0.0.0.0',
+      allowedHosts: ['tmntech.ddns.net'],
+    },
     plugins: [react()],
     define: {
       'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),

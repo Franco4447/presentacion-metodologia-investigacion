@@ -2,5 +2,5 @@ services:
   web:
     build: .
     ports:
-      - "7000:7000"
+      - "7100:7100"
     restart: unless-stopped
