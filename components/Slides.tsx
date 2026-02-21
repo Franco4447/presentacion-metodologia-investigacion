@@ -32,15 +32,19 @@ const MOTSimulation = () => {
   
   // State
   const [balls, setBalls] = useState(() => {
-    // Initialize balls with random positions and velocities
-    return Array.from({ length: BALL_COUNT }).map((_, i) => ({
-      id: i,
-      isTarget: i === 0,
-      x: Math.random() * (100 - BALL_SIZE_PERCENT),
-      y: Math.random() * (100 - BALL_SIZE_PERCENT),
-      vx: (Math.random() - 0.5) * 0.5, // Random velocity X
-      vy: (Math.random() - 0.5) * 0.5, // Random velocity Y
-    }));
+    // Initialize balls with random positions and CONSTANT FAST velocity
+    const SPEED = 0.8; // Constant speed magnitude
+    return Array.from({ length: BALL_COUNT }).map((_, i) => {
+      const angle = Math.random() * 2 * Math.PI; // Random direction
+      return {
+        id: i,
+        isTarget: i === 0,
+        x: Math.random() * (100 - BALL_SIZE_PERCENT),
+        y: Math.random() * (100 - BALL_SIZE_PERCENT),
+        vx: Math.cos(angle) * SPEED, 
+        vy: Math.sin(angle) * SPEED, 
+      };
+    });
   });
 
   const [isTargetVisible, setIsTargetVisible] = useState(true);
@@ -144,27 +148,27 @@ const MOTSimulation = () => {
 // Slide 1: Portada - Impacto Visual Máximo Responsivo
 export const Slide1: React.FC<SlideContentProps> = ({ currentSlide, totalSlides }) => (
   <SlideLayout slideNumber={currentSlide} totalSlides={totalSlides}>
-    <div className="h-full flex flex-col items-center text-center relative p-4 overflow-y-auto">
+    <div className="h-full flex flex-col items-center text-center relative p-4">
       
-      <div className="flex-1 flex flex-col justify-center items-center mb-8 lg:mb-16 w-full max-w-6xl">
-        <div className="mb-6 lg:mb-10 p-4 lg:p-8 bg-slate-100 rounded-full shadow-inner">
+      <div className="flex-1 flex flex-col justify-center items-center mb-4 lg:mb-8 w-full">
+        <div className="mb-4 lg:mb-6 p-4 lg:p-6 bg-slate-100 rounded-full shadow-inner">
           <Brain className="w-16 h-16 md:w-24 md:h-24 lg:w-32 lg:h-32 text-blue-900" />
         </div>
-        <h1 className="text-3xl md:text-5xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-black text-blue-900 mb-4 lg:mb-8 leading-tight tracking-tight">
-          Relación entre Videojuegos FPS y Atención Selectiva
+        <h1 className="text-3xl md:text-5xl lg:text-7xl xl:text-8xl 2xl:text-8xl font-black text-blue-900 mb-2 lg:mb-4 leading-none tracking-tight">
+          Relación entre Videojuegos FPS<br/>y Atención Selectiva
         </h1>
-        <div className="w-32 lg:w-64 h-2 lg:h-3 bg-blue-500 mb-6 lg:mb-10 rounded-full"></div>
-        <h2 className="text-xl md:text-3xl lg:text-5xl 2xl:text-6xl text-slate-600 font-light mb-8 lg:mb-12 leading-tight">
+        <div className="w-32 lg:w-64 h-2 lg:h-3 bg-blue-500 mb-4 lg:mb-6 rounded-full"></div>
+        <h2 className="text-xl md:text-3xl lg:text-5xl 2xl:text-6xl text-slate-600 font-light mb-4 lg:mb-8 leading-tight whitespace-nowrap">
           Un estudio experimental sobre experiencia y entrenamiento
         </h2>
-        <div className="text-sm md:text-xl lg:text-3xl 2xl:text-4xl font-bold text-slate-400 uppercase tracking-[0.2em] mt-4 lg:mt-8">
+        <div className="text-sm md:text-xl lg:text-3xl 2xl:text-4xl font-bold text-slate-400 uppercase tracking-[0.2em] mt-2 lg:mt-4 whitespace-nowrap">
           Licenciatura en Psicología — Universidad Favaloro
         </div>
       </div>
 
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-20 px-4 lg:px-12 pb-4 lg:pb-8 mt-auto">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-20 px-4 lg:px-12 pb-16 lg:pb-32 mt-auto">
         <div className="text-left bg-white/60 p-4 lg:p-8 rounded-2xl backdrop-blur-md border border-slate-200 shadow-sm hidden md:block">
-          <h4 className="text-blue-900 font-bold uppercase tracking-wider mb-2 lg:mb-4 border-b-2 lg:border-b-4 border-blue-200 pb-1 lg:pb-2 inline-block text-sm lg:text-2xl">
+          <h4 className="text-blue-900 font-bold uppercase tracking-wider mb-2 lg:mb-4 border-b-2 lg:border-b-4 border-blue-200 pb-1 lg:pb-2 inline-block text-sm lg:text-3xl">
             Profesores
           </h4>
           <ul className="text-base lg:text-3xl text-slate-700 space-y-1 lg:space-y-3 font-medium">
@@ -174,14 +178,14 @@ export const Slide1: React.FC<SlideContentProps> = ({ currentSlide, totalSlides 
         </div>
 
         <div className="text-right bg-white/60 p-4 lg:p-8 rounded-2xl backdrop-blur-md border border-slate-200 shadow-sm hidden md:block">
-          <h4 className="text-blue-900 font-bold uppercase tracking-wider mb-2 lg:mb-4 border-b-2 lg:border-b-4 border-blue-200 pb-1 lg:pb-2 inline-block text-sm lg:text-2xl">
+          <h4 className="text-blue-900 font-bold uppercase tracking-wider mb-2 lg:mb-4 border-b-2 lg:border-b-4 border-blue-200 pb-1 lg:pb-2 inline-block text-sm lg:text-3xl">
             Alumnos
           </h4>
           <ul className="text-base lg:text-3xl text-slate-700 space-y-1 lg:space-y-3 font-medium">
-            <li>Ivanna Ayelén Martínez</li>
-            <li>Shim Un Young</li>
             <li>Francisco Iglesias</li>
             <li>Franco Mendez Casariego</li>
+            <li>Ivanna Ayelén Martínez</li>
+            <li>Shim Un Young</li>
           </ul>
         </div>
       </div>
@@ -650,8 +654,8 @@ export const Slide8: React.FC<SlideContentProps> = ({ currentSlide, totalSlides 
 
                 {/* Step 3 */}
                 <div className="flex flex-row lg:flex-col items-center group flex-1 gap-4 lg:gap-0">
-                    <div className="w-16 h-16 lg:w-32 lg:h-32 2xl:w-40 2xl:h-40 bg-white border-4 lg:border-[10px] border-slate-600 rounded-full flex items-center justify-center mb-0 lg:mb-10 shadow-2xl z-20 flex-shrink-0">
-                        <span className="font-black text-slate-700 text-xl lg:text-4xl 2xl:text-5xl">Día 14</span>
+                    <div className="w-16 h-16 lg:w-32 lg:h-32 2xl:w-40 2xl:h-40 bg-white border-4 lg:border-[10px] border-slate-600 rounded-full flex items-center justify-center mb-0 lg:mb-10 shadow-2xl z-20 flex-shrink-0 text-center">
+                        <span className="font-black text-slate-700 text-xl lg:text-4xl 2xl:text-5xl leading-none block w-full">Día 14</span>
                     </div>
                     <div className="bg-white p-4 lg:p-10 rounded-2xl lg:rounded-[2rem] shadow-xl text-left lg:text-center border-l-4 lg:border-l-0 lg:border-t-[12px] border-slate-600 w-full lg:h-80 2xl:h-96 flex flex-col justify-start">
                         <h4 className="font-black text-xl lg:text-3xl 2xl:text-4xl mb-2 lg:mb-4 text-slate-800 uppercase tracking-wide">Re-Test</h4>
