@@ -172,8 +172,8 @@ export const Slide1: React.FC<SlideContentProps> = ({ currentSlide, totalSlides 
             Profesores
           </h4>
           <ul className="text-base lg:text-3xl text-slate-700 space-y-1 lg:space-y-3 font-medium">
-            <li>Nombre del Profesor 1</li>
-            <li>Nombre del Profesor 2</li>
+            <li>Gaston Saux</li>
+            <li>Magali Ayelen Martinez</li>
           </ul>
         </div>
 
@@ -276,6 +276,7 @@ export const Slide3: React.FC<SlideContentProps> = ({ currentSlide, totalSlides 
             <UserCheck className="w-12 h-12 lg:w-24 lg:h-24 text-blue-900" />
           </div>
           <h3 className="text-2xl lg:text-5xl 2xl:text-6xl font-extrabold text-blue-900 mb-2 lg:mb-6 leading-tight">Demanda Común</h3>
+          <span className="text-blue-600 text-sm lg:text-xl 2xl:text-2xl font-bold uppercase tracking-widest mb-2 lg:mb-6 block">Feng & Spence (2018)</span>
           <p className="text-slate-600 text-lg lg:text-3xl 2xl:text-4xl px-2 lg:px-6 leading-relaxed font-medium">
             Mejora por similitud directa (selección rápida).
           </p>
@@ -296,7 +297,7 @@ export const Slide3: React.FC<SlideContentProps> = ({ currentSlide, totalSlides 
             <Brain className="w-12 h-12 lg:w-24 lg:h-24 text-white" />
           </div>
           <h3 className="text-2xl lg:text-5xl 2xl:text-6xl font-extrabold text-white mb-2 lg:mb-6 relative z-10 leading-tight">Aprender a Aprender</h3>
-          <span className="text-blue-300 text-sm lg:text-xl 2xl:text-2xl font-bold uppercase tracking-widest mb-2 lg:mb-6 block relative z-10">Feng & Spence</span>
+          <span className="text-blue-300 text-sm lg:text-xl 2xl:text-2xl font-bold uppercase tracking-widest mb-2 lg:mb-6 block relative z-10">Feng & Spence (2018)</span>
           <p className="text-blue-50 text-lg lg:text-3xl 2xl:text-4xl px-2 lg:px-6 leading-relaxed font-medium relative z-10">
             Control flexible adaptable a <em>nuevas tareas</em>.
           </p>
@@ -418,18 +419,27 @@ export const Slide5: React.FC<SlideContentProps> = ({ currentSlide, totalSlides 
         <div className="bg-white p-6 lg:p-12 rounded-2xl lg:rounded-[3rem] shadow-xl border-l-[10px] lg:border-l-[20px] border-slate-800 flex-1 flex flex-col justify-center">
           <h4 className="text-2xl lg:text-5xl font-bold text-slate-800 mb-6 lg:mb-12 border-b-2 lg:border-b-4 border-slate-100 pb-2 lg:pb-6">Demografía</h4>
           
-          <div className="space-y-6 lg:space-y-12">
+          <div className="space-y-4 lg:space-y-8">
             <div>
                 <p className="text-sm lg:text-xl text-slate-400 font-bold uppercase tracking-widest mb-1 lg:mb-2">Edad</p>
-                <p className="text-4xl lg:text-7xl font-light text-blue-900">18 - 21</p>
-                <p className="text-slate-500 text-sm lg:text-2xl italic mt-1 lg:mt-2">Ref: Newzoo (2024)</p>
+                <p className="text-3xl lg:text-6xl font-light text-blue-900">18 - 21</p>
+                <p className="text-slate-500 text-sm lg:text-xl italic mt-1">Ref: Newzoo (2024)</p>
+            </div>
+
+            <div>
+                <p className="text-sm lg:text-xl text-slate-400 font-bold uppercase tracking-widest mb-1 lg:mb-2">Sexo</p>
+                <p className="text-3xl lg:text-6xl font-light text-blue-900 mb-1 lg:mb-2">Indistinto</p>
+                <p className="text-slate-600 text-sm lg:text-lg font-medium leading-snug max-w-md">
+                    Hipótesis de similitudes de género. No es variable causante.
+                </p>
+                <p className="text-slate-500 text-sm lg:text-xl italic mt-1">Ref: Hyde (2005)</p>
             </div>
             
             <div>
                 <p className="text-sm lg:text-xl text-slate-400 font-bold uppercase tracking-widest mb-1 lg:mb-2">Muestra Total</p>
                 <div className="flex items-baseline gap-2 lg:gap-4">
-                  <p className="text-4xl lg:text-7xl font-bold text-slate-800">N = 60</p>
-                  <p className="text-slate-600 text-lg lg:text-3xl font-medium">(30 / grupo)</p>
+                  <p className="text-3xl lg:text-6xl font-bold text-slate-800">N = 120</p>
+                  <p className="text-slate-600 text-lg lg:text-2xl font-medium">(60 / grupo)</p>
                 </div>
             </div>
           </div>
@@ -446,20 +456,29 @@ export const Slide5: React.FC<SlideContentProps> = ({ currentSlide, totalSlides 
 
          <div className="flex-1 flex flex-col justify-center gap-4 lg:gap-10 relative z-10">
             {/* Jugadores */}
-            <div className="bg-white p-6 lg:p-10 rounded-2xl lg:rounded-3xl shadow-xl border-l-[8px] lg:border-l-[16px] border-green-500">
-                <div className="flex justify-between items-center mb-2 lg:mb-6">
+            <div className="bg-white p-4 lg:p-8 rounded-2xl lg:rounded-3xl shadow-xl border-l-[8px] lg:border-l-[16px] border-green-500">
+                <div className="flex justify-between items-center mb-2 lg:mb-4">
                     <span className="text-xl lg:text-4xl font-bold text-green-800">Jugadores</span>
                     <span className="bg-green-100 text-green-800 px-3 py-1 lg:px-6 lg:py-2 rounded-full text-xs lg:text-xl font-bold tracking-wide">API DATA</span>
                 </div>
-                <ul className="space-y-2 lg:space-y-4 text-base lg:text-3xl text-slate-700 font-medium">
-                    <li className="flex items-center gap-2 lg:gap-5">
-                        <CheckCircle2 className="w-5 h-5 lg:w-9 lg:h-9 text-green-600 flex-shrink-0"/> &gt; 1 hora diaria
+                <ul className="space-y-2 lg:space-y-3 text-base lg:text-2xl text-slate-700 font-medium">
+                    <li className="flex items-center gap-2 lg:gap-4">
+                        <CheckCircle2 className="w-5 h-5 lg:w-8 lg:h-8 text-green-600 flex-shrink-0"/> &gt; 1 hora diaria
                     </li>
-                    <li className="flex items-center gap-2 lg:gap-5">
-                        <CheckCircle2 className="w-5 h-5 lg:w-9 lg:h-9 text-green-600 flex-shrink-0"/> Últimos <strong className="text-black">5 años</strong>
+                    <li className="flex items-center gap-2 lg:gap-4">
+                        <CheckCircle2 className="w-5 h-5 lg:w-8 lg:h-8 text-green-600 flex-shrink-0"/> Últimos <strong className="text-black">5 años</strong>
                     </li>
-                    <li className="flex items-center gap-2 lg:gap-5">
-                        <Database className="w-5 h-5 lg:w-9 lg:h-9 text-slate-400 flex-shrink-0"/> Validación: <strong>SteamDB</strong>
+                    <li className="pt-2 border-t border-slate-100 mt-2">
+                         <div className="flex items-center gap-2 lg:gap-4 mb-1">
+                            <Database className="w-5 h-5 lg:w-8 lg:h-8 text-blue-600 flex-shrink-0"/> 
+                            <span className="font-bold text-blue-900">Validación: SteamDB</span>
+                         </div>
+                         <p className="text-sm lg:text-lg text-slate-600 leading-snug pl-7 lg:pl-12 mb-1">
+                            Evita el <strong>sesgo de auto-reporte</strong> (exageración o minimización) común en la literatura.
+                         </p>
+                         <p className="text-xs lg:text-base text-slate-400 font-bold uppercase tracking-widest pl-7 lg:pl-12">
+                            Ref: Paulhus & Vazire (2007)
+                         </p>
                     </li>
                 </ul>
             </div>
@@ -491,7 +510,7 @@ export const Slide6: React.FC<SlideContentProps> = ({ currentSlide, totalSlides 
         <div className="mb-4 lg:mb-12 border-l-4 lg:border-l-8 border-blue-500 pl-4 lg:pl-8">
             <span className="text-slate-400 text-sm lg:text-xl 2xl:text-2xl uppercase tracking-[0.2em] font-bold block mb-1 lg:mb-2">Variable Dependiente</span>
             <h3 className="text-4xl lg:text-7xl 2xl:text-8xl font-black text-blue-900 mb-2 lg:mb-4">Test MOT</h3>
-            <p className="text-xl lg:text-3xl 2xl:text-4xl text-slate-500 font-serif italic">Ref: Lukavsky (2016)</p>
+            <p className="text-xl lg:text-3xl 2xl:text-4xl text-slate-500 font-serif italic">Ref: Boot et al. (2008)</p>
         </div>
         
         <div className="space-y-4 lg:space-y-10">
@@ -548,6 +567,7 @@ export const Slide7: React.FC<SlideContentProps> = ({ currentSlide, totalSlides 
             <div>
                 <h3 className="text-2xl lg:text-4xl 2xl:text-5xl font-black text-blue-900 leading-none">Grupo Experimental</h3>
                 <span className="text-lg lg:text-2xl 2xl:text-3xl text-blue-600 font-bold mt-1 lg:mt-2 block">Tarea UFOV</span>
+                <span className="text-sm lg:text-lg 2xl:text-xl text-blue-400 font-serif italic block mt-1">Ref: Dale et al. (2020)</span>
             </div>
           </div>
           
@@ -584,6 +604,7 @@ export const Slide7: React.FC<SlideContentProps> = ({ currentSlide, totalSlides 
             <div>
                 <h3 className="text-2xl lg:text-4xl 2xl:text-5xl font-black text-slate-800 leading-none">Grupo Control</h3>
                 <span className="text-lg lg:text-2xl 2xl:text-3xl text-slate-500 font-bold mt-1 lg:mt-2 block">Fluidez Verbal</span>
+                <span className="text-sm lg:text-lg 2xl:text-xl text-slate-400 font-serif italic block mt-1">Ref: Lezak (2012), Shao (2014)</span>
             </div>
           </div>
           
@@ -730,6 +751,47 @@ export const Slide9: React.FC<SlideContentProps> = ({ currentSlide, totalSlides 
                 </li>
             </ul>
         </div>
+    </div>
+  </SlideLayout>
+);
+
+// Slide References: Referencias Bibliográficas
+export const SlideReferences: React.FC<SlideContentProps> = ({ currentSlide, totalSlides }) => (
+  <SlideLayout 
+    slideNumber={currentSlide} 
+    totalSlides={totalSlides}
+    title="Referencias Bibliográficas"
+  >
+    <div className="h-full flex flex-col py-4 lg:py-8 overflow-y-auto pr-4">
+      <ul className="space-y-4 lg:space-y-6 text-sm lg:text-xl text-slate-700 font-medium text-left pb-20">
+        <li className="pl-4 lg:pl-8 -indent-4 lg:-indent-8">
+          Boot, W. R., Kramer, A. F., Simons, D. J., Fabiani, M., & Gratton, G. (2008). The effects of video game playing on attention, memory, and executive control. <em>Acta psychologica</em>, 129(3), 387-398. https://doi.org/10.1016/j.actpsy.2008.09.005.
+        </li>
+        <li className="pl-4 lg:pl-8 -indent-4 lg:-indent-8">
+          Dale, G., Kattner, F., Bavelier, D., & Green, C. S. (2020). Cognitive abilities of action video game and role-playing video game players: Data from a massive open online course. <em>Psychology of Popular Media</em>, 9(3), 347. doi: 10.1037/ppm0000237.
+        </li>
+        <li className="pl-4 lg:pl-8 -indent-4 lg:-indent-8">
+          Feng, J., & Spence, I. (2018). Playing action video games boosts visual attention. In <em>Video game influences on aggression, cognition, and attention</em> (pp. 93-104). https://doi.org/10.1007/978-3-319-95495-0_8.
+        </li>
+        <li className="pl-4 lg:pl-8 -indent-4 lg:-indent-8">
+          Hyde, J. S. (2005). The Gender Similarities Hypothesis. <em>American Psychologist Association</em>, 60(6), 581-592. doi:10.1037/0003-066X.60.6.581.
+        </li>
+        <li className="pl-4 lg:pl-8 -indent-4 lg:-indent-8">
+          Lezak, M., Howieson, D., Bigler, E., and Tranel, D. (2012). <em>Neuropsychological Assessment</em>. Oxford University Press.
+        </li>
+        <li className="pl-4 lg:pl-8 -indent-4 lg:-indent-8">
+          Newzoo. (2024). <em>Global Gamer Study 2024</em>. Amsterdam: Newzoo. Retrieved from https://newzoo.com/resources/trend-reports/global-gamer-study-free-report-2024.
+        </li>
+        <li className="pl-4 lg:pl-8 -indent-4 lg:-indent-8">
+          Paulhus, D., & Vazire, S. (2007). The Self-Report Method. In R. Robins, R. Fraley, & R. Krueger, <em>Handbool of Research Methods in Personality Psychology</em> (pp. 224-239). The Guilford Press.
+        </li>
+        <li className="pl-4 lg:pl-8 -indent-4 lg:-indent-8">
+          Shao, Z., Janse, E., Visser, K., & Meyer, A. S. (2014). What do verbal fluency tasks measure? Predictors of verbal fluency performance in older adults. <em>Frontiers in psychology</em>, 5, 772. https://doi.org/10.3389/fpsyg.2014.00772
+        </li>
+        <li className="pl-4 lg:pl-8 -indent-4 lg:-indent-8">
+          Vásquez Echeverría, A. (Ed.). (2006). <em>Manual de introducción a la psicología cognitiva</em>. UdelaR.
+        </li>
+      </ul>
     </div>
   </SlideLayout>
 );

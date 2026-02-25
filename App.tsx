@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { 
   Slide1, Slide2, Slide3, Slide4, Slide5, 
-  Slide6, Slide7, Slide8, Slide9, Slide10 
+  Slide6, Slide7, Slide8, Slide9, Slide10, SlideReferences 
 } from './components/Slides';
 import { ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react';
 
-const SLIDE_COUNT = 10;
+const SLIDE_COUNT = 11;
 
 const App: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(1);
@@ -43,7 +43,8 @@ const App: React.FC = () => {
       case 7: return <Slide7 {...props} />;
       case 8: return <Slide8 {...props} />;
       case 9: return <Slide9 {...props} />;
-      case 10: return <Slide10 {...props} />;
+      case 10: return <SlideReferences {...props} />;
+      case 11: return <Slide10 {...props} />;
       default: return <Slide1 {...props} />;
     }
   };
