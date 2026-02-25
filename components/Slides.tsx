@@ -410,7 +410,7 @@ export const Slide5: React.FC<SlideContentProps> = ({ currentSlide, totalSlides 
   <SlideLayout 
     slideNumber={currentSlide} 
     totalSlides={totalSlides}
-    title="Participantes: Muestreo"
+    title="Participantes - Muestreo no probabilístico por conveniencia"
   >
     <div className="h-full flex flex-col lg:flex-row items-stretch justify-between gap-6 lg:gap-16 py-4 lg:py-8">
       
