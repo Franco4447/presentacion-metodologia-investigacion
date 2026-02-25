@@ -439,7 +439,7 @@ export const Slide5: React.FC<SlideContentProps> = ({ currentSlide, totalSlides 
                 <p className="text-sm lg:text-xl text-slate-400 font-bold uppercase tracking-widest mb-1 lg:mb-2">Muestra Total</p>
                 <div className="flex items-baseline gap-2 lg:gap-4">
                   <p className="text-3xl lg:text-6xl font-bold text-slate-800">N = 120</p>
-                  <p className="text-slate-600 text-lg lg:text-2xl font-medium">(60 / grupo)</p>
+                  <p className="text-slate-600 text-lg lg:text-2xl font-medium">(30 / grupo)</p>
                 </div>
             </div>
           </div>
